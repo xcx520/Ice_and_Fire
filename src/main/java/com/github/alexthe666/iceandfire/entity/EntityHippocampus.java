@@ -166,6 +166,7 @@ public class EntityHippocampus extends TamableAnimal implements ISyncMount, IAni
 
     @Override
     public boolean isAlliedTo(@NotNull Entity entityIn) {
+        if (this.isTame() && this.getowner() != null)
         if (this.isTame()) {
             LivingEntity livingentity = this.getOwner();
             if (entityIn == livingentity) {
